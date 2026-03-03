@@ -7,7 +7,7 @@ public class FryingPan : MonoBehaviour, IHeatable
     {
         if (other.CompareTag("Cookable"))
         {
-            other.gameObject.transform.SetParent(this.transform, true);
+            //other.gameObject.transform.SetParent(this.transform, true);
             if (isOnBurner)
             {
                 ICookable cookable = other.GetComponent<ICookable>();
