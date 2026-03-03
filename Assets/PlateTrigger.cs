@@ -4,9 +4,9 @@ public class PlateTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cookable"))
+        if (other.CompareTag("Cookable"))
         {
-            other.gameObject.transform.SetParent(this.transform, true);
+            other.transform.SetParent(transform, true);
         }
     }
 
