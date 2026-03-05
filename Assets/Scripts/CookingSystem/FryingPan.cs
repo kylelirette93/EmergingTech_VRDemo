@@ -3,12 +3,21 @@ using UnityEngine;
 public class FryingPan : MonoBehaviour, IHeatable
 {
     bool isOnBurner = false;
+    [SerializeField] private Rigidbody panRb;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Cookable"))
         {
-            other.transform.SetParent(transform, true);
-            
+            var joint = other.gameObject.AddComponent<ConfigurableJoint>();
+            joint.connectedBody = panRb;
+            joint.xMotion = ConfigurableJointMotion.Locked;
+            joint.yMotion = ConfigurableJointMotion.Locked;
+            joint.zMotion = ConfigurableJointMotion.Locked;
+            joint.angularXMotion = ConfigurableJointMotion.Locked;
+            joint.angularYMotion = ConfigurableJointMotion.Locked;
+            joint.angularZMotion = ConfigurableJointMotion.Locked;
+
+
             //other.gameObject.transform.SetParent(transform, true);
             if (isOnBurner)
             {
@@ -32,12 +41,15 @@ public class FryingPan : MonoBehaviour, IHeatable
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Cookable"))
-        {
+        { 
             ICookable cookable = other.GetComponent<ICookable>();
+
             if (cookable != null)
             {
                 cookable.StopCooking();
             }
+
+            Destroy(other.GetComponent<ConfigurableJoint>());
         }
     }
 

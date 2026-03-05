@@ -612,6 +612,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 78112863029652238, guid: a1e332d6c8ac40f46a82fb4c1c48c539, type: 3}
+--- !u!114 &565130901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565130895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494da56cffb57ec4cb67142af56b22de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burgerPrefab: {fileID: 8348407689761352238, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
 --- !u!1001 &598331193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1396,9 +1409,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 984731420}
   m_SourcePrefab: {fileID: 100100000, guid: 2cf1c041c8301994698006c9ec345079, type: 3}
---- !u!65 &1223621996 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 6752618936204704323, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
+--- !u!54 &1223621998 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3653523620381770290, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
   m_PrefabInstance: {fileID: 6701299689089305654}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1381282473
@@ -1998,6 +2011,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2065696312}
   m_SourcePrefab: {fileID: 100100000, guid: d827db38b2ef0774ebf15cb4d55d5da9, type: 3}
+--- !u!54 &1864817211 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2637635050411573296, guid: 87a3bce30b6c6b548937cc3647c44a3c, type: 3}
+  m_PrefabInstance: {fileID: 4241643088504305868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1868254806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3014,7 +3032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2565968661436683928, guid: 87a3bce30b6c6b548937cc3647c44a3c, type: 3}
       propertyPath: m_Size.y
-      value: 0.075938284
+      value: 0.07225442
       objectReference: {fileID: 0}
     - target: {fileID: 2565968661436683928, guid: 87a3bce30b6c6b548937cc3647c44a3c, type: 3}
       propertyPath: m_Size.z
@@ -3026,7 +3044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2565968661436683928, guid: 87a3bce30b6c6b548937cc3647c44a3c, type: 3}
       propertyPath: m_Center.y
-      value: 0.8906473
+      value: 0.86751413
       objectReference: {fileID: 0}
     - target: {fileID: 2565968661436683928, guid: 87a3bce30b6c6b548937cc3647c44a3c, type: 3}
       propertyPath: m_Center.z
@@ -3056,6 +3074,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.43636513
       objectReference: {fileID: 0}
+    - target: {fileID: 7276098643308034414, guid: 87a3bce30b6c6b548937cc3647c44a3c, type: 3}
+      propertyPath: panRb
+      value: 
+      objectReference: {fileID: 1864817211}
     - target: {fileID: 7479915150102323662, guid: 87a3bce30b6c6b548937cc3647c44a3c, type: 3}
       propertyPath: m_MovementType
       value: 1
@@ -3146,12 +3168,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3331902354906575060, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
+      propertyPath: panRb
+      value: 
+      objectReference: {fileID: 1864817211}
+    - target: {fileID: 3331902354906575060, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
+      propertyPath: burgerRb
+      value: 
+      objectReference: {fileID: 1223621998}
+    - target: {fileID: 3331902354906575060, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: burnTime
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509213459296713442, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_MovementType
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3509213459296713442, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_FarAttachMode
@@ -3170,56 +3196,32 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3509213459296713442, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_SmoothPositionAmount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509213459296713442, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_SmoothRotationAmount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509213459296713442, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_RetainTransformParent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509213459296713442, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: 'm_Colliders.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1223621996}
-    - target: {fileID: 3509213459296713442, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_ThrowAngularVelocityScale
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3653523620381770290, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3653523620381770290, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
+    - target: {fileID: 5172575962846987380, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.15317088
       objectReference: {fileID: 0}
     - target: {fileID: 5172575962846987380, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_Size.y
-      value: 0.025466785
+      value: 0.044930935
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172575962846987380, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
+      propertyPath: m_Size.z
+      value: 0.1773988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172575962846987380, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
+      propertyPath: m_Center.x
+      value: -0.006585449
       objectReference: {fileID: 0}
     - target: {fileID: 5172575962846987380, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_Center.y
-      value: 0.012733385
+      value: 0.02309028
       objectReference: {fileID: 0}
     - target: {fileID: 5172575962846987380, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_Center.z
-      value: 3.1157048e-18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172575962846987380, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752618936204704323, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752618936204704323, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      value: 0.00096674263
       objectReference: {fileID: 0}
     - target: {fileID: 8348407689761352238, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_Name
@@ -3231,7 +3233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687531794581237908, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.89
+      value: 0.8711
       objectReference: {fileID: 0}
     - target: {fileID: 8687531794581237908, guid: 72066b413e20d714c9f380a25fde29e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3329,6 +3331,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 341370750166026369, guid: aaa105ec3bc86a44c99696d6d34c480c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 565130897}
+    - targetCorrespondingSourceObject: {fileID: 341370750166026369, guid: aaa105ec3bc86a44c99696d6d34c480c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 565130901}
   m_SourcePrefab: {fileID: 100100000, guid: aaa105ec3bc86a44c99696d6d34c480c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

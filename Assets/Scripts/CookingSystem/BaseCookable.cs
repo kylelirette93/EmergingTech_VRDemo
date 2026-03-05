@@ -7,6 +7,10 @@ public class BaseCookable : MonoBehaviour, ICookable
     [SerializeField] Color cookedColor;
     [SerializeField] Color burntColor;
     [SerializeField] protected float cookingTime;
+    [SerializeField] private Rigidbody burgerRb;
+    [SerializeField] private Rigidbody panRb;
+    public bool IsInPan = false;
+
     protected bool isCooking = false;
     [SerializeField] protected float burnTime;
     protected Renderer renderer;
