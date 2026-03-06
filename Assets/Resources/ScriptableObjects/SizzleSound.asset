@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e8ec1ffad62424181f03429b09e106, type: 3}
+  m_Name: SizzleSound
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 559c7c383c3baa343bb74d524098d9e1, type: 3}
+  volume: 1
+  pitchRange: {x: 1, y: 1}
+  isLooping: 1

@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class PlateTrigger : MonoBehaviour
 {
+    [SerializeField] Rigidbody plateRb;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Cookable"))
         {
-            other.transform.SetParent(transform, true);
+            var joint = other.gameObject.AddComponent<ConfigurableJoint>();
+            joint.connectedBody = plateRb;
+            joint.xMotion = ConfigurableJointMotion.Locked;
+            joint.yMotion = ConfigurableJointMotion.Locked;
+            joint.zMotion = ConfigurableJointMotion.Locked;
+            joint.angularXMotion = ConfigurableJointMotion.Locked;
+            joint.angularYMotion = ConfigurableJointMotion.Locked;
+            joint.angularZMotion = ConfigurableJointMotion.Locked;
         }
     }
 
@@ -14,7 +22,7 @@ public class PlateTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cookable"))
         {
-            other.gameObject.transform.SetParent(null);
+            Destroy(other.GetComponent<ConfigurableJoint>());
         }
     }
 }

@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945050135062261686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0274, y: 0.92, z: 0.121}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.0273998, y: 0.9222, z: 0.12099999}
   m_LocalScale: {x: -1, y: -0.12205386, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,8 +83,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.32963014, y: 0.01986599, z: 0.3441977}
-  m_Center: {x: -3.0329628, y: 0.8626112, z: 0.43537673}
+  m_Size: {x: 0.504673, y: 0.07225442, z: 0.45924205}
+  m_Center: {x: -3.0807486, y: 0.86751413, z: 0.43981704}
 --- !u!114 &7276098643308034414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b5170834f3fae4d80afac32ca059d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoint: {fileID: 0}
+  panRb: {fileID: 2637635050411573296}
 --- !u!1 &6318511810004377826
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,11 +449,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8549885359043270352, guid: 983e463819a221045b481c6014abb72f, type: 3}
 --- !u!1 &9010923643759231934
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 1
   m_LimitLinearVelocity: 0
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10

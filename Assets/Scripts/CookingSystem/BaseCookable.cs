@@ -14,6 +14,16 @@ public class BaseCookable : MonoBehaviour, ICookable
     protected bool isCooking = false;
     [SerializeField] protected float burnTime;
     protected Renderer renderer;
+    [SerializeField] protected float minImpactVelocity = 1.0f;
+
+    [Header("Audio")]
+    [SerializeField] protected AudioSource cookingAudioSource;
+    [SerializeField] protected AudioDataSO cookingDataSO;
+    [SerializeField] protected AudioDataSO dropItemDataSO;
+
+
+    [Header("Particles")]
+    [SerializeField] protected ParticleSystem cookingParticles;
 
     public void Start()
     {
@@ -21,6 +31,8 @@ public class BaseCookable : MonoBehaviour, ICookable
     }
     public void Cook()
     {
+        cookingDataSO.Play(cookingAudioSource);
+        cookingParticles.Play();
         StartCoroutine(CookingRoutine());
     }
 
@@ -47,11 +59,20 @@ public class BaseCookable : MonoBehaviour, ICookable
         {
             renderer.materials[0].color = burntColor;
         }
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.relativeVelocity.magnitude > minImpactVelocity)
+        {
+            dropItemDataSO.Play(cookingAudioSource);
+        }
     }
 
     public void StopCooking()
     {
         isCooking = false;
+        cookingAudioSource.Stop();
+        cookingParticles.Stop();
     }
 }
